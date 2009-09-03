@@ -1,5 +1,5 @@
 #summary Hapax2 API
-#labels Documentation
+#labels Documentation,Featured
 
  <wiki:toc/>
 
