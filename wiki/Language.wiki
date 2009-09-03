@@ -1,0 +1,48 @@
+#summary Hapax2 Language
+#labels Featured
+
+ <wiki:toc/>
+
+ = CTemplate =
+
+ == Variable ==
+
+ A value pulled from the scope context dictionary and emitted.
+
+{{{
+
+ {{var_name}}
+
+}}}
+
+ == Include ==
+
+ A named template in the caller's context.  A directory path is
+ prepended and the filename extension is added.
+
+{{{
+
+ {{>name}}
+
+}}}
+
+ == Section ==
+
+{{{
+
+ {{#sectionName}}
+   ...
+ {{/sectionName}}
+
+}}}
+
+ == Embedded EZT ==
+
+{{{
+
+ {{{[ezt]code}}}
+
+}}}
+
+ = EZT =
+

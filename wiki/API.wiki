@@ -1,0 +1,58 @@
+#summary Hapax2 API
+#labels Documentation
+
+ <wiki:toc/>
+
+ = Files =
+
+ Files are named with "xtm" filename extension. 
+
+ = Sections =
+
+ CTemplate sections are repeated once for each child dictionary found
+ in their name.
+
+ = API Example =
+
+ This example is clipped from http://code.google.com/p/teamfrednet-gap/source/browse/trunk/src/gap/odl/Main.java
+
+{{{
+
+import hapax.Template;
+import hapax.TemplateCache;
+import hapax.TemplateDictionary;
+import hapax.TemplateException;
+
+    public final static void Process(File xtm, File odl, PrintWriter out)
+        throws IOException, TemplateException, Syntax
+    {
+        TemplateCache loader = new TemplateCache(xtm.getParent());
+        Template template = loader.getTemplate(xtm.getPath());
+        TemplateDictionary dict = new TemplateDictionary();
+        Reader odlReader = new Reader(odl);
+        Class odlClass = new Class(odlReader);
+        dict.put("package_name",odlClass.pack.name);
+        dict.put("class_name",odlClass.name);
+        if (odlClass.hasImports()){
+            TemplateDictionary imports = dict.addChildDict("import");
+            for (Import imp : odlClass.imports){
+                if (imp.isPackage())
+                    imports.put("import_package",imp.packageName);
+                else
+                    imports.put("import_class",imp.className);
+            }
+        }
+        else
+            dict.hideSection("import");
+        if (odlClass.hasFields()){
+            TemplateDictionary fields = dict.addChildDict("field");
+            for (Field field : odlClass.fields){
+                fields.put("field_class",field.typeName);
+                fields.put("field_name",field.name);
+            }
+        }
+        else
+            dict.hideSection("field");
+    }
+
+}}}

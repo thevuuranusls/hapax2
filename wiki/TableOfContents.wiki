@@ -1,0 +1,5 @@
+#summary TOC for Hapax2
+
+  * [Language]
+  * [API]
+  * [GettingInvolved Getting Involved]
