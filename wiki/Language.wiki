@@ -28,6 +28,8 @@
 
 }}}
 
+ An include may be visible or hidden according to the state of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  This is the Sections API.  The name of the include, shown above, is a "section name" from the perspective of the data dictionary.  See "Sections", next, for more info.
+
  == Section ==
 
 {{{
@@ -38,12 +40,21 @@
 
 }}}
 
+ A section is iterated zero or more times.  Zero is hidden, and one or more is shown.
+
+ The iteration of a section (or include) is controlled by the sections programmatically added into the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] as child data dictionaries in a section list. 
+
  == Embedded EZT ==
 
 {{{
-
  {{{[ezt]code}}}
-
 }}}
+
+ or equivalently
+
+{{{
+ {{[[ezt]code]}}
+}}}
+
 
  = EZT =
