@@ -72,9 +72,11 @@
 
  = EZT =
 
- The [http://code.google.com/p/ezt/ EZT] templating language is embedded into the top level CTemplate.  In its own, its expressions are enclosed within square brackets.
+ The [http://code.google.com/p/ezt/ EZT] templating language is embedded into the top level CTemplate. 
 
- The [http://code.google.com/p/ezt/ EZT] templating language has a variable dereference, like CTemplate.
+ In its own, its expressions are enclosed within square brackets.
+
+ The [http://code.google.com/p/ezt/ EZT] language has a variable dereference, like CTemplate.
 
 {{{
  [var_name]
@@ -98,6 +100,19 @@
  {{[[ezt]code]}}
 }}}
 
+ EZT expressions may be inlined into CTZ within one CT expression
+{{{
+ {{{[if-any varname]Output [varname][else]Missing 'varname'.[end]}}}
+}}}
+ or mixed with CT expressions as in
+{{{
+ {{{[if-any varname]}}}Output {{varname}}{{{[else]}}}Missing 'varname'.{{{[end]}}}
+}}}
+ or equivalently
+{{{
+ {{[[if-any varname]]}}Output {{varname}}{{[[else]]}}Missing 'varname'.{{[[end]]}}
+}}}
+
  == Variable ==
 
 {{{
@@ -119,6 +134,13 @@
  The CTZ/EZT conditional expressions are
 {{{
  [if-any varName]
+}}}
+ the variable existence test, and
+{{{
  [is varName value] or [is varName "value"]
+}}}
+ the variable equivalence test, and
+{{{
  [is-visible sectionName] 
 }}}
+ the section status test.
