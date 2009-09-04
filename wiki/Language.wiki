@@ -1,5 +1,5 @@
 #summary Hapax2 Language
-#labels Featured
+#labels Featured,Documentation
 
  <wiki:toc/>
 
