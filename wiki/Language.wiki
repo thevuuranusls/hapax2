@@ -3,7 +3,12 @@
 
  <wiki:toc/>
 
+
+ We could call this language "CTZ" (or "Hapax") because it is the combination of [http://code.google.com/p/google-ctemplate CTemplate] with embedded [http://code.google.com/p/ezt/ EZT].  
+
  = CTemplate =
+
+ CTemplate is a "simple as possible for performance" template language.  It excels at the main organization of templates and their rendering.
 
  == Variable ==
 
@@ -17,7 +22,7 @@
 
  Accepted variable name strings start with an ASCII character and may include characters, numbers and underscore.  Variable names are case sensitive.
 
- With Hapax 2.1.4, the value of a variable is interpreted for Hapax/CT language.  This feature permits complex templates to be written with variables that dereference with the full features of Hapax/CT.
+ With Hapax 2.1.4, the value of a variable is interpreted for CTZ language.  This feature permits complex templates to be written with variables that dereference with the full features of CTZ.
 
  == Include ==
 
@@ -66,3 +71,54 @@
 
 
  = EZT =
+
+ The [http://code.google.com/p/ezt/ EZT] templating language is embedded into the top level CTemplate.  In its own, its expressions are enclosed within square brackets.
+
+ The [http://code.google.com/p/ezt/ EZT] templating language has a variable dereference, like CTemplate.
+
+{{{
+ [var_name]
+}}}
+
+ and conditional branching features
+
+{{{
+ [if-any varname]Output [varname][else]Missing 'varname'.[end]
+}}}
+
+ In usage with the top level CTemplate (or CTZ), ETZ is contained within the embedding brackets
+
+{{{
+ {{{[ezt]code}}}
+}}}
+
+ or equivalently
+
+{{{
+ {{[[ezt]code]}}
+}}}
+
+ == Variable ==
+
+{{{
+ [var_name]
+}}}
+
+ == Conditionals ==
+
+ The following conditional expressions share 
+{{{
+ [cond] then [end]
+}}}
+ and
+{{{
+ [cond] then [else] otherwise [end]
+}}}
+ structure.
+
+ The CTZ/EZT conditional expressions are
+{{{
+ [if-any varName]
+ [is varName value] or [is varName "value"]
+ [is-visible sectionName] 
+}}}
