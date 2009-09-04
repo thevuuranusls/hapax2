@@ -7,7 +7,7 @@
 
  [http://code.google.com/p/google-ctemplate CTemplate] is a "simple as possible for performance" template language. 
 
- Any objective my be met through the application of a combination of the following features.  And, when met this way, the result will have a maximal runtime performance.
+ Any objective my be met through the application of a combination of the following features.  And when met this way, the result will have a maximal runtime performance.
 
  == Variable ==
 
