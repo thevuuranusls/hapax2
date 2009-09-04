@@ -3,12 +3,11 @@
 
  <wiki:toc/>
 
-
- We could call this language "CTZ" (or "Hapax") because it is the combination of [http://code.google.com/p/google-ctemplate CTemplate] with embedded [http://code.google.com/p/ezt/ EZT].  
-
  = CTemplate =
 
- CTemplate is a "simple as possible for performance" template language.  It excels at the main organization of templates and their rendering.
+ [http://code.google.com/p/google-ctemplate CTemplate] is a "simple as possible for performance" template language. 
+
+ Any objective my be met through the application of a combination of the following features.  And, when met this way, the result will have a maximal runtime performance.
 
  == Variable ==
 
@@ -18,22 +17,6 @@
 }}}
 
  Accepted variable name strings start with an ASCII character and may include characters, numbers and underscore.  Variable names are case sensitive.
-
- With Hapax 2.1.4, the value of a variable is interpreted for CTZ language.  This feature permits complex templates to be written with variables that dereference with the full features of CTZ.
-
- == Include ==
-
- A named template in the caller's context.  A directory path is
- prepended and the filename extension is appended.  
-
- Note that template file base names (without path or dot- suffix) need to follow the naming conventions for variables and sections.  A base name starts with a character and includes characters, digits and underscore.  
-{{{
- {{>name}}
-}}}
-
- An include may be visible or hidden according to the state of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  This is the Sections API.  The name of the include, shown above, is a "section name" from the perspective of the data dictionary.  See "Sections", next, for more info.
-
- When applied to the Sections API of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary], the include base name as a section name is not case sensitive.  However, as a file name in reading the included template file, the case sensitivity of the file system applies.
 
  == Section ==
 
@@ -48,70 +31,16 @@
 
  Section names have the same character class as variable names, but are not case sensitive under the Sections API of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].
 
+ == Include ==
 
- = EZT =
+ The include is an "external" section.  The [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] must enable the include by defining a section.   The include may be iterated zero or more times, according to the configuration of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].
+{{{
+ {{>name}}
+}}}
+ The context directory path is prepended, and the (dot "xtm") filename extension is appended to this name -- or a redirected name (see below).
 
- The [http://code.google.com/p/ezt/ EZT] templating language is embedded into CTZ using 
-{{{
- {{{ [ezt]code }}}
-}}}
- or equivalently
-{{{
- {{[ [ezt]code ]}}
-}}}
+ Note that template file base names (without path or dot- suffix) need to follow the naming conventions for variables and sections.  A base name starts with a character and includes characters, digits and underscore.  
 
- EZT complements CT with conditional processing.  This permits conditional aspects of presentation to be embedded into the template.  Of course, CTemplate excludes such features for performance, and their use is not fast.  
+ The include name can be redirected in its template file with a variable defined in the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  The value of the variable will be employed as the template file name.  In this case, the include section name remains the name defined in the template.
 
- == Expressions ==
-
- In its own, its expressions are enclosed within square brackets.
-
- The [http://code.google.com/p/ezt/ EZT] language has a variable dereference, like CTemplate.
-{{{
- [var_name]
-}}}
- and conditional branching features
-{{{
- [if-any varname]Output [varname][else]Missing 'varname'.[end]
-}}}
-
-
- EZT expressions may be inlined into CTZ within one CT expression
-{{{
- {{{[if-any varname]Output [varname][else]Missing 'varname'.[end]}}}
-}}}
-
- And, EZT expressions may be mixed with CT expressions as in
-{{{
- {{{[if-any varname]}}}Output {{varname}}{{{[else]}}}Missing 'varname'.{{{[end]}}}
-}}}
- or equivalently
-{{{
- {{[[if-any varname]]}}Output {{varname}}{{[[else]]}}Missing 'varname'.{{[[end]]}}
-}}}
-
- == Conditionals ==
-
- The following conditional expressions share 
-{{{
- [cond] then [end]
-}}}
- and
-{{{
- [cond] then [else] otherwise [end]
-}}}
- structure.
-
- The CTZ/EZT conditional expressions are
-{{{
- [if-any varName]
-}}}
- the variable existence test, and
-{{{
- [is varName value] or [is varName "value"]
-}}}
- the variable equivalence test, and
-{{{
- [is-visible sectionName] 
-}}}
- the section status test.
+ When applied to the Sections API of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary], the include base name as a section name is not case sensitive.  However, as a file name in reading the included template file, the case sensitivity of the file system applies.
