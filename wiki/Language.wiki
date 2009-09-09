@@ -44,3 +44,7 @@
  The include name can be redirected in its template file with a variable defined in the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  The value of the variable will be employed as the template file name.  In this case, the include section name remains the name defined in the template.
 
  When applied to the Sections API of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary], the include base name as a section name is not case sensitive.  However, as a file name in reading the included template file, the case sensitivity of the file system applies.
+
+ = Edit support =
+
+ * [http://code.google.com/p/google-ctemplate/source/browse/trunk/contrib/tpl-mode.el Emacs]
