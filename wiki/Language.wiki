@@ -51,4 +51,4 @@
 
  = Edit support =
 
- * [http://code.google.com/p/google-ctemplate/source/browse/trunk/contrib/tpl-mode.el Emacs]
+ * [http://code.google.com/p/hapax2/source/browse/support/emacs/tpl-mode.el Emacs]
