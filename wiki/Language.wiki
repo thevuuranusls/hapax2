@@ -15,6 +15,10 @@
 {{{
  {{var_name}}
 }}}
+ or (equivalently)
+{{{
+ {{=var_name}}
+}}}
 
  Accepted variable name strings start with an ASCII character and may include characters, numbers and underscore.  Variable names are case sensitive.
 
