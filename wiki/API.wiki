@@ -16,6 +16,13 @@
  CTemplate sections are repeated once for each [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] found
  in their name.
 
- = API Example =
+ = Scopes =
 
- A nice, real world example may be found in http://code.google.com/p/teamfrednet-gap/source/browse/trunk/src/gap/odl/Main.java
+ A CTemplate section or include enters the scope of a defined [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  This scope inherits and overrides its parent scope.  Variables defined in the child scope of a section are clearly differentiated from other siblings and cousins.
+
+ = Example =
+
+ A nice, real world example may be found in GAP ODL in
+ * http://code.google.com/p/teamfrednet-gap/source/browse/trunk/src/gap/odl/Main.java 
+ and 
+ * http://code.google.com/p/teamfrednet-gap/source/browse/trunk/odl/java.xtm
