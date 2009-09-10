@@ -46,7 +46,9 @@
  == Special iteration sections ==
 
  Within a section or include are defined five special sections as aids to iteration.  These are named for the section or include name string, with a special suffix string appended.  
-
+{{{
+ {{#field}}{{#field_it_NotFirst}},{{/field_it_NotFirst}} {{=field_name}}{{/field}}
+}}}
  These special section names are enumerated in the following patterns.
 
  <dl>
@@ -66,14 +68,6 @@
  <dt><tt>name_it_Exclusive</tt>
  <dd> Sections in scope having a name in this pattern are visible when not the first and not the last.
 
-
-
- === Example ===
-
- The following example produces a comma and space delimited list of sections named "field".
-{{{
- {{#field}}{{#field_it_NotFirst}}, {{/field_it_NotFirst}} {{=field_name}}{{/field}}
-}}}
 
  = Edit support =
 
