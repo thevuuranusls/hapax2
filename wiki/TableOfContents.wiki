@@ -3,3 +3,5 @@
   * [Language]
   * [API]
   * [GettingInvolved Getting Involved]
+  * Edit support
+   * [http://code.google.com/p/hapax2/source/browse/support/emacs/tpl-mode.el Emacs]
