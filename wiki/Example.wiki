@@ -1,0 +1,9 @@
+#summary Example using Hapax2
+#labels Featured,Documentation
+
+ A nice, real world example may be found in 
+ [http://code.google.com/p/teamfrednet-gap/source/browse/trunk/src/gap/odl/Main.java GAP ODL Main],
+ its template
+ [http://code.google.com/p/teamfrednet-gap/source/browse/trunk/odl/java.xtm Java XTM],
+ and data model
+ [http://code.google.com/p/teamfrednet-gap/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
