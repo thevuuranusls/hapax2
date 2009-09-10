@@ -41,6 +41,8 @@
 
  The template file is resolved from the template name (or variable value) by prepending the context directory path, and appending the dot "xtm" filename extension.
 
+ The resolved template file may be a URL.
+
  == Special iteration sections ==
 
  Within a section or include are defined five special sections as aids to iteration.  These are named for the section or include name string, with a special suffix string appended.  
