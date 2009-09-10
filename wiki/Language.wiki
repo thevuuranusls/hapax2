@@ -49,6 +49,38 @@
 
  When applied to the Sections API of the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary], the include base name as a section name is not case sensitive.  However, as a file name in reading the included template file, the case sensitivity of the file system applies.
 
+ == Special iteration sections ==
+
+ Within a section or include are defined five special sections as aids to iteration.  These are named for the section or include name string, with a special suffix string appended.  
+
+ These special section names are enumerated in the following patterns.
+
+ <dl>
+
+ <dt><tt>name_it_NotFirst</tt>
+ <dd> Sections in scope having a name in this pattern are visible when not in the first iteration.
+
+ <dt><tt>name_it_First</tt>
+ <dd> Sections in scope having a name in this pattern are visible in the first iteration.
+
+ <dt><tt>name_it_NotLast</tt>
+ <dd> Sections in scope having a name in this pattern are visible when not in the last iteration.
+
+ <dt><tt>name_it_Last</tt>
+ <dd> Sections in scope having a name in this pattern are visible in the last iteration.
+
+ <dt><tt>name_it_Exclusive</tt>
+ <dd> Sections in scope having a name in this pattern are visible when not the first and not the last.
+
+
+
+ === Example ===
+
+ The following example produces a comma and space delimited list of sections named "field".
+{{{
+ {{#field}}{{#field_it_NotFirst}}, {{/field_it_NotFirst}} {{=field_name}}{{/field}}
+}}}
+
  = Edit support =
 
  * [http://code.google.com/p/hapax2/source/browse/support/emacs/tpl-mode.el Emacs]
