@@ -67,8 +67,3 @@
 
  <dt><tt>name_it_Exclusive</tt>
  <dd> Sections in scope having a name in this pattern are visible when not the first and not the last.
-
-
- = Edit support =
-
- * [http://code.google.com/p/hapax2/source/browse/support/emacs/tpl-mode.el Emacs]
