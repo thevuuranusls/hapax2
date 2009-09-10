@@ -1,4 +1,4 @@
-#summary Example using Hapax2
+#summary Using Hapax2 templates for source code generation
 #labels Featured,Documentation
 
  A nice, real world example may be found in 
@@ -7,3 +7,5 @@
  [http://code.google.com/p/teamfrednet-gap/source/browse/trunk/odl/java.xtm Java XTM],
  and data model
  [http://code.google.com/p/teamfrednet-gap/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
+
+ In this example, a data model is parsed from a text file and applied to a Hapax2 template.
