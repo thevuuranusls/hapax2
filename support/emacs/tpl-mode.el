@@ -21,7 +21,9 @@
 ;;; however this is difficult due to the presence of CTemplate symbols
 ;;; embedded within attributes.
 ;;; ---
-;;; 2009/09/09 - Added Hapax2/CTemplate Variable optional syntax {{=name}}./jdp/
+;;; 2009/09/09 - Added Hapax2 optional variable dereference {{=name}}.  (jdp)
+;;; ---
+;;; 2009/10/10 - Fixed multiline comment {{!name}}.  (jdp)
 ;;; ---
 ;;;
 
@@ -85,12 +87,12 @@
 (defconst tpl-mode-close-section (concat "{{/\\("
 					 tpl-mode-tpl-token
 					 "\\)}}"))
-;; TODO(tonyg) Figure out a way to support multiline comments.
-(defconst tpl-mode-comment "\\({{!.*?}}\\)")
+
+(defconst tpl-mode-comment "\\({{![^}]+?}}\\)")
 (defconst tpl-mode-include (concat "\\({{>"
 				   tpl-mode-tpl-token
 				   "}}\\)"))
-(defconst tpl-mode-variable (concat "\\({{[=]*"
+(defconst tpl-mode-variable (concat "\\({{=?"
 				    tpl-mode-tpl-token
 				    "}}\\)"))
 (defconst tpl-mode-builtins
