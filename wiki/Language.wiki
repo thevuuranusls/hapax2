@@ -3,15 +3,20 @@
 
  <wiki:toc/>
 
- = CTemplate =
+ = H2/CTemplate =
+{{{
+ Hello, {{=world}}.
+}}}
 
  [http://code.google.com/p/google-ctemplate CTemplate] is a "simple as possible for performance" template language. 
 
  Any objective my be met through the application of a combination of the following features.  And when met this way, the result will have a maximal runtime performance.
 
+ Hapax2 implements a minimal variant on [http://code.google.com/p/google-ctemplate Google CTemplate].  Most notably, the use of the `"{{=...}}"` syntax for variable dereference rather than configuration.
+
  == Variable ==
 
- A value pulled from the scope context dictionary and emitted.
+ A value pulled from the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] and emitted.
 {{{
  {{var_name}}
 }}}
@@ -19,11 +24,17 @@
 {{{
  {{=var_name}}
 }}}
- Variable names are case sensitive.
+
+ == Comment ==
+
+ A multiline ctemplate comment is formed in the following syntax.
+{{{
+ {{!...}}
+}}}
 
  == Section ==
 
- A section is iterated zero or more times.  Zero is hidden, and one or more is shown.
+ A section is iterated zero or more times according to the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary]. 
 {{{
  {{#sectionName}}
    ...
@@ -37,7 +48,7 @@
 {{{
  {{>name}}
 }}}
- The include name can be redirected in its template file with a variable defined in the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  A positive value for a variable of the same name will be employed as the template file base name.  Under variable redirection, the include section name remains the name defined in the template.
+ The include name may be redirected by a variable defined in the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary].  A positive value for a variable of the same name will be employed as the template file base name.  Under variable redirection, the include section name remains the name defined in the template.
 
  The template file is resolved from the template name (or variable value) by prepending the context directory path, and appending the dot "xtm" filename extension.
 
