@@ -1,0 +1,5 @@
+#summary Extensions to Hapax2 Language
+
+ Hapax2 is very liberal in what it accepts for name strings within its `{{` and `}}` blocks.
+
+ Hapax3 variants found in [http://gap-data.googlecode.com/ gap-data] and more recently in [http://lxl.googlecode.com/ lxl] employ hierarchical naming with simplified X-Path expressions.
