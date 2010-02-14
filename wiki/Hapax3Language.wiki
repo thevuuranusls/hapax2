@@ -1,5 +1,5 @@
 #summary Extensions to Hapax2 Language
-#labels Featured
+#labels Documentation
 
  Hapax2 is very liberal in what it accepts for name strings within its `{{ ... }}` blocks.
 
