@@ -3,6 +3,24 @@
 
  <wiki:toc/>
 
+= Inclusion = 
+
+A template is included by
+
+{{{
+  {{>template_b}}
+}}}
+
+from `template_a` in the same dir, or
+
+{{{
+  {{>subdir/template_b}}
+}}}
+
+in a sub directory of the directory containing `template_a`.  
+
+Note that all template files are named `"*.xtm"`, and the loader excludes `".."` relative directories as a security precaution.
+
 = Repetition =
 
 The trick with ctemplate style programming is the use of data dictionaries to drive output rather than the template.  The template language has no looping but the data dictionary can cause repetitive output by using the template section syntax.
