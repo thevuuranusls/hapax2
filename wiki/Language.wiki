@@ -40,7 +40,9 @@
    ...
  {{/sectionName}}
 }}}
- The iteration of a section (or include) is controlled by the sections programmatically added into the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] as child data dictionaries in a section list. 
+ The iteration of a section (or include) is controlled by the sections programmatically added into the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] as child data dictionaries in a section list.
+
+ See also [Example#Repetition]. 
 
  == Include ==
 
@@ -53,6 +55,8 @@
  The template file is resolved from the template name (or variable value) by prepending the context directory path, and appending the dot "xtm" filename extension.
 
  The resolved template file may be a URL.
+
+ See also [Example#Inclusion]. 
 
  == Special iteration sections ==
 
