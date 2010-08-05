@@ -44,12 +44,8 @@ Repetitive sections may be defined as
 
 = Advanced =
 
- A nice, real world example may be found in Gap Data, although this code base has it's own implementation of Hapax2 (which could be called Hapax3).
+A nice, real world example may be found in Gap Data, although this code base has it's own implementation of Hapax2 (which could be called Hapax3).
 
- See the driver [http://code.google.com/p/gap-data/source/browse/odlc/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java OD] + [http://code.google.com/p/gap-data/source/browse/types/src/gap/service/Classes.java Classes],
- for the template
- [http://code.google.com/p/gap-data/source/browse/odlc/xtm/BeanData.java.xtm Java XTM],
- and data model
- [http://code.google.com/p/gap-data/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
+See the driver [http://code.google.com/p/gap-data/source/browse/odlc/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java OD] + [http://code.google.com/p/gap-data/source/browse/types/src/gap/service/Classes.java Classes], for the template [http://code.google.com/p/gap-data/source/browse/odlc/xtm/BeanData.java.xtm Java XTM], and data model [http://code.google.com/p/gap-data/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
 
- In this example, a data model is parsed from a text file and applied to a Hapax2 template.
+In this example, a data model is parsed from a text file and applied to a Hapax2 template.
