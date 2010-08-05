@@ -3,11 +3,31 @@
 
  <wiki:toc/>
 
+= Repetition =
+
+The trick with ctemplate style programming is the use of data dictionaries to drive output rather than the template.  The template language has no looping but the data dictionary can cause repetitive output by using the template section syntax.
+
+For the Hapax2 template expression
+
+{{{
+  {{#imports}}
+  import {{=import_spec}};{{/imports}}
+}}}
+
+Repetitive sections may be defined as
+{{{
+   TemplateDataDictionary top = new TemplateDictionary();
+   for (String importSpec: ...){
+     top.addSection("imports").setVariable("import_spec",importSpec);
+   }
+}}}
+
 = Advanced =
 
- A nice, real world example may be found in 
- [http://code.google.com/p/gap-data/source/browse/odlc/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java OD] + [http://code.google.com/p/gap-data/source/browse/types/src/gap/service/Classes.java Classes],
- its template
+ A nice, real world example may be found in Gap Data, although this code base has it's own implementation of Hapax2 (which could be called Hapax3).
+
+ See the driver [http://code.google.com/p/gap-data/source/browse/odlc/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java OD] + [http://code.google.com/p/gap-data/source/browse/types/src/gap/service/Classes.java Classes],
+ for the template
  [http://code.google.com/p/gap-data/source/browse/odlc/xtm/BeanData.java.xtm Java XTM],
  and data model
  [http://code.google.com/p/gap-data/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
