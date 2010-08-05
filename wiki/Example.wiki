@@ -6,9 +6,9 @@
 = Advanced =
 
  A nice, real world example may be found in 
- [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java GAP OD],
+ [http://code.google.com/p/gap-data/source/browse/odlc/src/gap/odl/Main.java GAP ODL Main] and [http://code.google.com/p/gap-data/source/browse/trunk/src/gap/service/OD.java OD] + [http://code.google.com/p/gap-data/source/browse/types/src/gap/service/Classes.java Classes],
  its template
- [http://code.google.com/p/gap-data/source/browse/trunk/odl/java.xtm Java XTM],
+ [http://code.google.com/p/gap-data/source/browse/odlc/xtm/BeanData.java.xtm Java XTM],
  and data model
  [http://code.google.com/p/gap-data/source/browse/trunk/odl/oso/data/Person.odl Person ODL].
 
