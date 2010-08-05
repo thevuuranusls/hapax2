@@ -19,6 +19,8 @@ from `template_a` in the same dir, or
 
 in a sub directory of the directory containing `template_a`.  
 
+The include is an "external" section. The data dictionary must enable the include by defining one or more sections for one or more iterations of the include.  See also [Language#Include] and the next section, [Example#Repetition].
+
 Note that all template files are named `"*.xtm"`, and the loader excludes `".."` relative directories as a security precaution.
 
 = Repetition =
