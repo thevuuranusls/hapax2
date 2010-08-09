@@ -1,6 +1,5 @@
-#summary Using Hapax2 templates for source code generation
+#summary Using Hapax2
 #labels Featured,Documentation
-
  <wiki:toc/>
 
 = Inclusion = 
