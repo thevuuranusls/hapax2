@@ -1,2 +1,3 @@
 Alan Stewart's "imports" example.
 
+See http://code.google.com/p/hapax2/wiki/Example#Imports_with_template
