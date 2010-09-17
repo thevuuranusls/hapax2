@@ -19,5 +19,5 @@
 
 = How To =
 
- Please send mail letting us know how your interest in contributing to
+ Please send mail letting us know about your interest in contributing to
  Hapax2.
