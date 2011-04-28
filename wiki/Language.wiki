@@ -42,6 +42,30 @@
 }}}
  The iteration of a section (or include) is controlled by the sections programmatically added into the [http://code.google.com/p/hapax2/source/browse/trunk/src/hapax/TemplateDictionary.java data dictionary] as child data dictionaries in a section list.
 
+ Sections are defined in one or more instances in the data dictionary, as in the following example.
+{{{
+  {{#menu}}
+    {{#submenu}}
+      {{#menu}}{{/menu}}
+    {{/submenu}}
+  {{/menu}}
+}}}
+ This template will work for both
+{{{
+  TemplateDataDictionary doc = new TemplateDictionary();
+  TemplateDataDictionary menu = doc.addSection("menu");
+  TemplateDataDictionary sm = menu.addSection("submenu");
+  TemplateDataDictionary ssm = sm.addSection("menu");
+}}}
+ and
+{{{
+  TemplateDataDictionary doc = new TemplateDictionary();
+  TemplateDataDictionary menu = doc.addSection("menu");
+  TemplateDataDictionary sm = menu.addSection("submenu");
+}}}
+
+ In the second case, the section "menu" is referenced from the parent of "submenu", and in the first case this section is found within "submenu".
+
  See also [Example#Repetition]. 
 
  == Include ==
