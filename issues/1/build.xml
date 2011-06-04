@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="hapax-issue-1" default="jar">
+
+  <tstamp/>
+
+  <property name="compiler.src" value="1.6"/>
+  <property name="compiler.tgt" value="1.6"/>
+
+  <property name="src" location="src"/>
+  <property name="bin" location="bin"/>
+  <property name="lib" location="lib"/>
+
+  <property name="target.jar" value="${ant.project.name}.jar"/>
+
+  <path id="lib.path.hapax">
+    <fileset dir="${lib}">
+      <include name="**/hapax*.jar" />
+    </fileset>
+  </path>
+
+  <target name="compile">
+
+    <mkdir dir="${bin}"/>
+
+    <javac srcdir="${src}" destdir="${bin}" 
+           debug="true" 
+           source="${compiler.src}" 
+           target="${compiler.tgt}">
+
+      <include name="**/*.java"/>
+
+      <classpath refid="lib.path.hapax"/>
+    </javac>
+
+  </target>
+
+  <target name="jar" depends="compile" description="Create JAR with only the class files required to use Hapax">
+
+    <jar jarfile="${target.jar}" basedir="${bin}" manifest="${src}/Manifest.mf">
+
+      <zipfileset src="${toString:lib.path.hapax}"/>
+      <fileset dir="${src}">
+        <include name="**/*.xtm"/>
+      </fileset>
+    </jar>
+
+    <delete dir="${bin}"/>
+
+  </target>
+
+</project>
