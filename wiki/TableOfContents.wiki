@@ -3,6 +3,7 @@
   * [Language]
   * [API]
   * [Example]
+  * [RecursiveInclude Recursive Include]
   * [Hapax3Language Hapax3 Language]
   * Edit support
    * [http://code.google.com/p/hapax2/source/browse/support/emacs/tpl-mode.el Emacs]
